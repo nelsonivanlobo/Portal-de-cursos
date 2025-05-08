@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es_LA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SDK MercadoPago -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <title>Cursos Balance</title>
+    
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark"><!-- navbar-dark bg-dark -->
+        <div class="container">
+            <a class="navbar-brand" href="#inicio"> <!-- data-bs-toggle="modal" data-bs-target="#loginModal" -->
+                <i class="fas fa-graduation-cap me-2"></i>Balance
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cursos">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.whatsapp.com/?lang=es_LA" target="_blank">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#misCursosModal">Mis cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><span class="fas fa-user-circle" style="font-size: 27px;"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <!-- Modal for Login -->
+         <!--   <div class="mb-3">
+                    <label for="name" class="form-label">Nombre:</label>
+                    <input type="name" class="form-control" id="name" placeholder="Introduce tu nombre" required>
+                </div> -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: aliceblue;">
+                        <h5 style="color: rgb(29, 29, 29);"><i class="fas fa-graduation-cap me-2"></i>Balance</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="login-content">
+                        <form>
+                            <div class="mb-3">
+                                <label for="correo" class="form-label">Correo electrónico:</label>
+                                <input type="email" class="form-control" id="correo" placeholder="Introduce tu correo" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña:</label>
+                                <input type="password" class="form-control" id="password" placeholder="Introduce tu contraseña" required>
+                            </div>
+                            <button id="login-entrar" type="submit" class="btn btn-primary w-100">Ingresar</button>
+                            <button id="login-crear" type="submit" class="btn btn-link w-100">Crear Cuenta</button>
+                        </form>
+                    </div>
+<!--                     <div class="modal-footer">
+                        <small class="text-muted">Bienvenida a Balance</small>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal MIS CURSOS -->
+        <div class="modal fade" id="misCursosModal" tabindex="-1" aria-labelledby="misCursosModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <!-- Título de bienvenida -->
+                    <div class="modal-header" style="background-color: aliceblue;">
+                        <h2 class="modal-title w-100 text-center" style="color: rgb(19, 83, 106);">Bienvenido <span>Nelson</span></h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="subtitulo">
+                       <p>¡Gracias por tu compra! Espéramos que disfrutes de nuestros cursos.<span style="font-size: 20px;">😊</span></p> 
+                    </div>
+                    <hr>
+                    <!-- Título de Mis cursos -->
+                    <div class="modal-body">
+                        <h3 class="text-center mb-4">Mis cursos</h3>
+                        <div id="cursos-alum">
+                            <div class="modal-header bg-success text-white">
+                                <h5 class="modal-title" id="misCursosModalLabel">Introducción a la Contabilidad Básica</h5>
+                            </div>
+                            <div class="modal-body">
+                                <!-- <p>¡Gracias por tu compra! Espéramos que disfrutes de nuestro curso.<span style="font-size: 20px;">😊</span></p> -->
+                                <div class="d-flex flex-wrap gap-2">
+                                    <a href="javascript:void(0)" class="btn btn-outline-primary">
+                                        <i class="fas fa-book me-2"></i>Información
+                                    </a>
+                                    <a href="javascript:void(0)" class="btn btn-outline-primary">
+                                        <i class="fas fa-download me-2"></i>Material del curso
+                                    </a>
+                                    <a href="javascript:void(0)" class="btn btn-outline-primary">
+                                        <i class="fas fa-link me-2"></i>Link de la clase
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <hr> -->
+                    <!-- Botón de cerrar sesión -->
+<!--                     <div class="modal-body text-center">
+                    <button class="btn btn-danger mb-3">Cerrar sesión</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="inicio">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <h1 class="hero-title">Impulsa tu carrera contable con nuestros cursos especializados</h1>
+                    <p class="hero-subtitle">Aprende de los mejores profesionales del sector contable y financiero. Cursos prácticos y actualizados con la normativa vigente.</p>
+                    <a href="" class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#videoModal">Ver presentación</a><!-- Ver todos los cursos -->
+                </div>
+                <div class="col-md-5 d-none d-md-block">
+                    <img src="https://cdn.pixabay.com/photo/2024/09/04/06/55/office-meeting-9020936_960_720.png" alt="Cursos de contabilidad" class="img-fluid" style="filter: invert(1); opacity: 0.8; max-width: 300px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- video modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+<!--                 <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabel">Bienvenido a Balance</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div> -->
+                <div class="modal-body">
+                    <video id="videoElement" controls>
+                        <source src="./video/ultimo.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de videos.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+      <!--  -->
+
+    <!-- Courses Section -->
+    <section class="container" id="cursos">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="mb-3">Nuestros Cursos Destacados</h2>
+                <p class="text-muted">Selecciona el curso que mejor se adapte a tus necesidades profesionales</p>
+            </div>
+        </div>
+
+        <div class="row g-4" id="courses-container"><!-- id="cursos" -->
+
+
+
+
+            
+
+
+
+        </div>
+    </section>
+
+    <!-- https://cdn.pixabay.com/photo/2017/08/05/13/06/girl-2583442_1280.jpg -->
+
+    <!-- https://cdn.pixabay.com/photo/2017/06/09/07/37/notebook-2386034_1280.jpg -->
+
+    <!-- Porque elegirnos -->
+    <section class="container my-5 py-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="mb-4">¿Por qué elegir nuestros cursos?</h2>
+                <br>
+                <div class="mb-4">
+                    <h5><i class="fas fa-check-circle text-success me-2"></i> Instructores expertos</h5>
+                    <p class="text-muted">Todos nuestros cursos son impartidos por contadores profesionales con amplia experiencia en el sector.</p>
+                </div>
+                <div class="mb-4">
+                    <h5><i class="fas fa-check-circle text-success me-2"></i> Contenido actualizado</h5>
+                    <p class="text-muted">Nuestros cursos se mantienen al día con las últimas normativas y tendencias del sector contable.</p>
+                </div>
+                <div class="mb-4">
+                    <h5><i class="fas fa-check-circle text-success me-2"></i> Enfoque práctico</h5>
+                    <p class="text-muted">Aprende con casos reales y ejemplos prácticos que podrás aplicar inmediatamente en tu dia a dia.</p>
+                </div>
+<!--                 <div class="mb-4">
+                    <h5><i class="fas fa-check-circle text-success me-2"></i> Certificación reconocida</h5>
+                    <p class="text-muted">Recibe un certificado que avala tus conocimientos y mejora tu curriculum profesional.</p>
+                </div> -->
+            </div>
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class="bg-light p-4 rounded-3 text-center" style="max-width: 500px;">
+                    <h3 class="mb-3">Profesionales capacitados</h3>
+                    <div class="row g-3 mb-4">
+                        <div class="col-6">
+                            <div class="bg-white p-3 rounded shadow-sm">
+                                <i class="fas fa-users fa-2x text-primary mb-2"></i>
+                                <!-- <h4>15+</h4> -->
+                                <p class="mb-0">Instructores expertos</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="bg-white p-3 rounded shadow-sm">
+                                <i class="fas fa-book fa-2x text-primary mb-2"></i>
+                                <!-- <h4>25+</h4> -->
+                                <p class="mb-0">Cursos especializados</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="bg-white p-3 rounded shadow-sm">
+                                <i class="fas fa-certificate fa-2x text-primary mb-2"></i>
+                                <!-- <h4>2000+</h4> -->
+                                <p class="mb-0">Aprendizaje asegurado</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="bg-white p-3 rounded shadow-sm">
+                                <i class="fas fa-star fa-2x text-primary mb-2"></i>
+                                <!-- <h4>4.9/5</h4> -->
+                                <p class="mb-0">Valoración 4.9/5</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Modal -->
+    <div class="modal fade" id="inscripcionModal" tabindex="-1" aria-labelledby="inscripcionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="inscripcionModalLabel">Formulario de Inscripción</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <h5>Detalles del curso:</h5>
+                            <p><strong>Curso:</strong> <span id="modal-curso-nombre"></span></p> <!-- id="title" -->
+                            <p><strong>Precio:</strong> <span id="modal-curso-precio">$</span></p> <!-- id="price" -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="alert alert-info">
+                                <i class="fas fa-info-circle me-2"></i> Complete el formulario para finalizar su inscripción.
+                            </div>
+                        </div>
+                    </div>
+                    <form id="inscripcionForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="nombre" class="form-label">Nombre completo</label>
+                                <input type="text" class="form-control" id="nombre" required>
+                            </div>
+<!--                             <div class="col-md-6">
+                                <label for="email" class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div> -->
+                            <div class="col-md-6">
+                                <label for="telefono" class="form-label">Teléfono</label>
+                                <input type="tel" class="form-control" id="telefono" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="provincia" class="form-label">Provincia</label>
+                                <select class="form-select" id="provincia" required>
+                                    <option value="" selected disabled>Seleccionar provincia</option>
+                                    <option value="Buenos Aires">Buenos Aires</option>
+                                    <option value="Córdoba">Córdoba</option>
+                                    <option value="Santa Fe">Santa Fe</option>
+                                    <option value="Mendoza">Mendoza</option>
+                                    <option value="Tucumán">Tucumán</option>
+                                    <option value="Entre Ríos">Entre Ríos</option>
+                                    <option value="Salta">Salta</option>
+                                    <option value="Chaco">Chaco</option>
+                                    <option value="Corrientes">Corrientes</option>
+                                    <option value="Santiago del Estero">Santiago del Estero</option>
+                                    <option value="San Juan">San Juan</option>
+                                    <option value="Jujuy">Jujuy</option>
+                                    <option value="Río Negro">Río Negro</option>
+                                    <option value="Neuquén">Neuquén</option>
+                                    <option value="Formosa">Formosa</option>
+                                    <option value="Chubut">Chubut</option>
+                                    <option value="San Luis">San Luis</option>
+                                    <option value="La Pampa">La Pampa</option>
+                                    <option value="Catamarca">Catamarca</option>
+                                    <option value="La Rioja">La Rioja</option>
+                                    <option value="Santa Cruz">Santa Cruz</option>
+                                    <option value="Tierra del Fuego">Tierra del Fuego</option>
+                                    <option value="CABA">Ciudad Autónoma de Buenos Aires</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="ciudad" class="form-label">Ciudad</label>
+                                <input type="text" class="form-control" id="ciudad" required>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="terminosCheck" required>
+                                    <label class="form-check-label" for="terminosCheck">
+                                        Acepto los términos y condiciones del servicio
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" id="checkout-btn">Realizar Compra</button> <!-- id="btnRealizarCompra" -->
+                    <div id="wallet_container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PDF Download Section -->
+    <div id="pdfDownloadSection" class="container my-4 d-none">
+        <div class="card shadow">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0"><i class="fas fa-file-pdf me-2"></i>Descarga tus materiales</h5>
+            </div>
+            <div class="card-body">
+                <p>¡Gracias por tu compra! Ahora puedes descargar los materiales del curso:</p>
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="javascript:void(0)" class="btn btn-outline-primary">
+                        <i class="fas fa-download me-2"></i>Guía de introducción
+                    </a>
+                    <a href="javascript:void(0)" class="btn btn-outline-primary">
+                        <i class="fas fa-download me-2"></i>Material del curso
+                    </a>
+                    <a href="javascript:void(0)" class="btn btn-outline-primary">
+                        <i class="fas fa-download me-2"></i>Ejercicios prácticos
+                    </a>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button type="button" class="btn btn-secondary btn-sm" id="closePdfSection">
+                    <i class="fas fa-times me-1"></i>Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Contact Section -->
+   <!-- <section class="py-5 bg-light" id="contacto">
+        <div class="container">
+            <h2 class="text-center mb-5">Contáctanos</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <form id="contact-form">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+                </section> -->
+
+
+<!-- Parallax Section -->
+<div class="parallax">
+    <div class="parallax-content">
+        <h1>!Unete a nuestros Cursos!</h1>
+        <p>Capacitación de excelencia para futuros profesionales</p>
+    </div>
+</div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="footer-title">Balance</h5>
+                    <p>Brindamos capacitación de excelencia en contabilidad, finanzas e impuestos para profesionales del sector contable.</p>
+                    <div class="social-icons">
+<!--                         <a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a>
+                        <a href="javascript:void(0)"><i class="fab fa-twitter"></i></a> -->
+                        <a href="javascript:void(0)"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="javascript:void(0)"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-title">Enlaces</h5>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#cursos">Cursos</a></li>
+<!--                         <li><a href="javascript:void(0)">Profesores</a></li>
+                        <li><a href="javascript:void(0)">Testimonios</a></li> -->
+                        <li><a href="javascript:void(0)">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="footer-title">Contacto</h5>
+                    <ul class="footer-links">
+                        <!-- <li><i class="fas fa-map-marker-alt me-2"></i>Av. Corrientes 1234, CABA</li> -->
+                        <li><i class="fas fa-phone me-2"></i>381 1234-567</li>
+                        <li><i class="fas fa-envelope me-2"></i>infobalance@gmail.com</li>
+                    </ul>
+                    <div class="mt-3">
+                        <a href="javascript:void(0)" class="btn btn-outline-light btn-sm">Solicitar información</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Balance. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+     <!-- Bootstrap JS -->
+<!--      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <section>
+        <h3>Producto: <span id="producto-description">Libro</span></h3>
+
+        <h3>Price: $<span id="unit-price">10</span></h3>
+
+        <h3>Quantity: <span id="quantity">1</span></h3>
+
+        <button id="checkout-btn">Checkout</button>
+    </section>
+
+    <div id="button-checkout"></div> --> <!-- donde aparecera el formulario una vez presionado comprar -->
+    <script src="script.js"></script>
+</body>
+</html>
