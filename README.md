@@ -2,7 +2,7 @@
 
 - Header:
 
-![Image](https://github.com/user-attachments/assets/046edb56-61f8-4b2b-9391-70840f9c50fc)
+<img width="1345" height="637" alt="Image" src="https://github.com/user-attachments/assets/80534be6-8fe9-4c2c-91e2-7d3c52f77a4c" />
 
 - Video de presentación:
 
