@@ -6,11 +6,11 @@
 
 - Video de presentación:
 
-![Image](https://github.com/user-attachments/assets/a5ef67c7-6775-49df-a7c5-8f4592531c12)
+<img width="1345" height="639" alt="Image" src="https://github.com/user-attachments/assets/7275385d-cf81-4850-92f2-a2c1083e8650" />
 
 - Sección de cursos:
 
-![Image](https://github.com/user-attachments/assets/bff2488b-5605-4067-b0a0-479b7099928a)
+<img width="1349" height="639" alt="Image" src="https://github.com/user-attachments/assets/5a3e1d35-96f8-4625-90c5-75bd0b2d6dfd" />
 
 - Formulario de compra:
 
