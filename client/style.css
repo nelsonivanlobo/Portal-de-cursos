@@ -17,16 +17,13 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     background-color: #2c3e50;
-/*     background-color: rgb(217, 127, 157); */
 }
 
 .navbar {
-    /* box-shadow: 0 2px 10px rgba(0,0,0,0.1); */
-    /* background-color: rgba(0,0,0,0.1); */
     background-color: #2c3e50;
     position: fixed;
     width: 100%;
-    z-index: 1000;   /* Asegura que esté por encima de otros elementos */
+    z-index: 1000;
 }
 
 .nav-link{
@@ -35,22 +32,67 @@ body {
 
 /* Estilo para el enlace activo */
 .nav-link.active {
-    color: #ecf0f1; /* Cambia este color según el diseño */
+    color: #ecf0f1;
 }
-
-
-/* .navbar-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
 
 .nav-item{
     margin-left: 25px;
     margin-right: 25px;
     font-size: 20px;
     background-color: #2c3e50;
-/* background-color: rgb(217, 127, 157); */
+}
+
+/* Animación de Fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicar la animación */
+.fade-in {
+    animation: fadeIn 1s ease-out;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+/* Animación de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Asignar retrasos a los elementos */
+.hero-title.fade-in {
+    animation-delay: 0.3s;
+}
+
+.hero-subtitle.fade-in {
+    animation-delay: 0.6s;
+}
+
+.btn.fade-in {
+    animation-delay: 1s;
+}
+
+/*  */
+.subTitle-login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 17px;
 }
 
 #videoModal video {
@@ -68,6 +110,15 @@ body {
     color: rgb(53, 53, 53);
 }
 
+/*  */
+.subTitle-login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 17px;
+}
+/*  */
 
 .subtitulo{
     margin-top: 25px;
@@ -78,10 +129,6 @@ body {
 
 
 .hero-section {
-/*     background-image: url("/client/img/3.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;  */
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
     padding: 80px 0;
@@ -98,7 +145,7 @@ body {
 .hero-subtitle {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    opacity: 0.9;
+    /* opacity: 0.9; */
 }
 
 .course-card {
@@ -181,6 +228,14 @@ body {
     justify-content: center;
 }
 
+.btn-mp{
+    height: 70px;
+    margin-right: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /* parallax */
         .parallax {
@@ -203,8 +258,6 @@ body {
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 /* ---------- */
-
-
 
 .footer-title {
     font-family: 'Poppins', sans-serif;

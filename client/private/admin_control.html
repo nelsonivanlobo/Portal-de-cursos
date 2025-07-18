@@ -14,21 +14,20 @@
         <h1>Bienvenido admin!</h1>
     </div>               
     <!-- Admin Panel Section -->
-    <section class="py-5 bg-white" id="admin">
+    <section class="py-5" id="admin">
         <div class="container">
            <!--  <h2 class="text-center mb-5">Panel Administrativo</h2> -->
             <div class="row">
                 <div class="col-lg-3 mb-4">
                     <div class="list-group">
                         <a href="#" class="list-group-item list-group-item-action active" id="products-tab">Cursos</a>
-                        <a href="#" class="list-group-item list-group-item-action" id="customers-tab">Alumnos</a>
-                        <!-- <a href="#" class="list-group-item list-group-item-action" id="inventory-tab">Reporte</a> -->
+                        <a href="#" class="list-group-item list-group-item-action" id="customers-tab">Reporte de compra</a>
                     </div>
-                    <div class="content-balance">
-                        <button class="volverWeb"><a href="/client/index.html">Volver a inicio</a></button>
+                    <div class="content-button">
+                        <button id="ir_a_web" onclick="window.open('/client/index.html', 'blank')" class="btn btn-primary">Ir a la pagina</button>
                     </div>
-                    <div class="content-tienda">
-                        <button class="cerrarSesion"><a href="">Cerrar Sesión</a></button>
+                    <div class="content-button">
+                      <button id="cerrarSesion">Cerrar Sesión</button>
                     </div>
                 </div>
                 <div class="col-lg-9">
@@ -64,38 +63,39 @@
                             </div>
                         </div>
 
-                        <!-- Gestion de clientes -->
+                        <!-- Gestion de compras/alumnos -->
                         <div id="customers-panel" class="d-none">
-                            <h4 class="mb-4">Reporte de Alumnos</h4>
-                            <input type="text" class="form-control mb-3" id="searchCurso" placeholder="Filtrar por curso...">
+                            <h4 class="mb-4">Reporte de compras</h4>
+                            <input type="text" class="form-control mb-3" id="searchCurso" placeholder="Filtrar por curso o nombre de alumno...">
                             <div class="table-responsive">
                                 <table class="table table-client">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Nombre</th>
-                                            <th>Correo</th>
-                                            <th>Teléfono</th>
-                                            <th>Provincia</th>
-                                            <th>Ciudad</th>
-                                            <th>Curso Adquirido</th>
-                                            <!-- <th>Acciones</th> -->
+                                        <th>ID Compra</th>
+                                        <th>Nombre Curso</th>
+                                        <th>Precio Curso</th>
+                                        <th>Nombre Alumno</th>
+                                        <th>Correo Alumno</th>
+                                        <th>Teléfono</th>
+                                        <th>Provincia</th>
+                                        <th>Fecha Compra</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <!-- <tr>
+                                    <tbody id="reporte-compras">
+                                        <!-- -->
+                                        <tr>
                                             <td>1</td>
+                                            <td>Introducción a la Contabilidad Básica</td>
+                                            <td>$15000</td>
                                             <td>María García</td>
                                             <td>maria@example.com</td>
                                             <td>+1 234 567 890</td>
-                                            <td>Introducción a la Contabilidad Básica</td>
-                                            <td>$299.00</td>
+                                            <td>San Luis</td>
                                             <td>21/05/25</td>
-                                            <td>
+<!--                                        <td>
                                                 <button class="btn btn-sm btn-primary">Contactar</button>
-                                            </td>
+                                            </td> -->
                                         </tr>
-                                         -->
                                     </tbody>
                                 </table>
                             </div>
@@ -104,9 +104,9 @@
                 </div>
             </div>
         </div>
- 
     </section>
 
+    <!-- FormularioS de cursos -->
     <section>
         <!-- cargar un curso -->
         <div class="modal fade" id="formModal" aria-labelledby="formModalLabel" aria-hidden="true">
@@ -159,7 +159,6 @@
                 </div>
             </div>
         </div>
-
 
 <!-- editar curso -->
 <div class="modal fade" id="formEditModal" aria-labelledby="formModalLabel" aria-hidden="true">
