@@ -14,12 +14,12 @@
 
 - Formulario de compra:
 
-![Image](https://github.com/user-attachments/assets/68855267-b31b-4b24-a6b9-61fb6205722e)
+<img width="1365" height="637" alt="Image" src="https://github.com/user-attachments/assets/3bbd8367-cf0d-4572-9b70-f4ac67fd6d35" />
 
 - Informacíon:
 
-![Image](https://github.com/user-attachments/assets/c2418d19-2104-4dca-9c36-6621624c44f1)
+<img width="1347" height="641" alt="Image" src="https://github.com/user-attachments/assets/982830fe-f19f-4c8a-b093-fa801e401313" />
 
 - Parallax y footer:
 
-![Image](https://github.com/user-attachments/assets/b63c85d7-6d10-4d80-9c95-901f92f777d4)
+<img width="1350" height="638" alt="Image" src="https://github.com/user-attachments/assets/59fd2ea1-38cc-4167-b744-6f3a8943fe7e" />
